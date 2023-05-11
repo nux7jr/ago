@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>My sites</h1>
+  <div class="sites-wrapper">
+
+    {{#each allSites}}
+      <div class="card bg-light mb-3 sites-card" style="max-width: 18rem;">
+        <div class="card-header">#{{@index}} {{this.title}}</div>
+        <form class="card-body" action="/sites" method="POST">
+          <h3 class="card-title">{{this.name}}</h3>
+          <p class="card-text">Birthtime: {{this.birthtime}}</p>
+          <p class="card-text">Size: {{this.size}}</p>
+          {{! hidden inputs }}
+          <input type="hidden" name="id" value="{{index}}" />
+          <input type="hidden" name="site" value="{{this.name}}" />
+          <input type="hidden" name="pathTo" value="{{this.pathTo}}" />
+          <input
+            type="submit"
+            name="option"
+            value="Edit"
+            class="btn btn-secondary"
+          />
+          <input
+            type="submit"
+            name="option"
+            value="Delete"
+            class="btn btn-danger"
+          />
+        </form>
+      </div>
+    {{/each}}
+  </div>
+</div>

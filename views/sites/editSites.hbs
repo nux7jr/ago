@@ -1,0 +1,12 @@
+<form class="container sites-edit" action="edit-site" method="POST">
+  <div class="sites-edit__heading">
+  <h1>Edits</h1>
+  <a href="javascript:history.back()" type="button" class="btn btn-primary sites-edit__button">Exit</a>
+  <button type="submit" class="btn btn-success sites-edit__button">Save</button>
+  {{!-- hidden --}}
+  <input type="hidden" name="pathTo" value="{{ pathTo }}">
+  </div>
+  <div class="editable-area">
+    <textarea class="editable-textarea" name="fileText">{{ editableInfo }}</textarea>
+  </div>
+</form>
