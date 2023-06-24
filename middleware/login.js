@@ -1,11 +1,10 @@
 module.exports = (req, res, next) => {
-  const myusername = 'admin'
-  const mypassword = 'pass'
-
+  const myusername = "admin";
+  const mypassword = "pass";
   // a variable to save a session
   var session;
 
-  if (req.body.password == "pass" && req.body.username == "admin") {
+  if (req.body.password == mypassword && req.body.username == myusername) {
     session = req.session;
     session.userid = req.body.username;
     // console.log(req.session);
@@ -13,7 +12,7 @@ module.exports = (req, res, next) => {
     res.redirect("/");
     // res.render('index');
   } else {
-    console.log("error")
-    res.render("login", { error: "Wrong login or password" })
+    console.log("error");
+    res.render("login", { error: "Wrong login or password" });
   }
-}
+};
