@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/auth_chek');
+const auth = require('../middleware/authChek');
 const { exec } = require("child_process");
 const fs = require("fs")
 // const fs = require('fs');
